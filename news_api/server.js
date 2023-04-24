@@ -61,7 +61,7 @@ const app = express();
 
 app.use((req, res, next)=> {
     // the http://localh... allows you to access the api's from the local host root on vue js       
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
+    res.header('Access-Control-Allow-Origin', '*')
     res.header("Access-Control-Allow-Credentials", "true")
     res.header("Access-Control-Allow-Methods", "*")
     res.header("Access-Control-Allow-Headers", "*")
