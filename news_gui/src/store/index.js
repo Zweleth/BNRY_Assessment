@@ -48,7 +48,20 @@ export default createStore({
       } catch (e) {
         console.log(e);
       }
-    },
+    },async search(context, value) {
+      try {
+        let res = await fetch(`${URL}search/${value}`);
+        let results = await res.json();
+        console.log(results.articles);
+
+        context.commit(
+          "setNews",
+          results.articles.length !== 0 ? results.articles : null
+        );
+      } catch (e) {
+        console.log(e);
+      }
+    }
     
     
   }
