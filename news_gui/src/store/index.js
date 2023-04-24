@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-const URL = 'https://brandnews.onrender.com'
+const URL = 'https://brandnews.onrender.com/'
 
 export default createStore({
   state: {
