@@ -5,7 +5,6 @@ const NewsAPI = require('newsapi');
 const news = new NewsAPI('acf1bc40b76548b2b4e2d7cd2124b02b');
 
 news.v2.everything({
-    q: 'everything',
     sources: "bbc.co.uk, the-verge",
     domains: 'bbc.co.uk',
     from: '2023-03-25',
