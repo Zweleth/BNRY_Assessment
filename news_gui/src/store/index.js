@@ -5,7 +5,8 @@ export default createStore({
   state: {
     news: null,
     headlines: null,
-    sports: null
+    sports: null,
+    showSearchbar: false
   },
   getters: {
     news(state) {
@@ -16,6 +17,9 @@ export default createStore({
     },
     sports(state) {
       return state.sports;
+    },
+    showSearchbar(state) {
+      return state.showSearchbar;
     }
   },
   mutations: {
@@ -27,6 +31,9 @@ export default createStore({
     },
     setSports(state, sports) {
       state.sports = sports;
+    },
+    setShowSearchbar(state, showSearchbar) {
+      state.showSearchbar = showSearchbar;
     }
   },
   actions: {
@@ -82,6 +89,9 @@ export default createStore({
       } catch (e) {
         console.log(e);
       }
+    },
+    toggleShow(value) {
+      this.commit(setShowSearchbar, value)
     }
     
     
