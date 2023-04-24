@@ -48,18 +48,32 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 }
 .description {
     height: 30%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    bottom: 0;
+    bottom: -15rem;
     border-radius: 0 0 0.8rem 0.8rem;
     
 }
 
+.point:hover .description {
+    animation: popUp 0.6s ease-in-out forwards;
+}
+
 .description h6 {
     color: var(--bgColor);
+}
+
+@keyframes popUp {
+    0% {
+        bottom: -15rem;
+    }
+    100% {
+        bottom: 0;
+    }
 }
 </style>
