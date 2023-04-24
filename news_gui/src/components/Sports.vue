@@ -2,16 +2,16 @@
   <div class="allNews">
     <div
       class="point"
-      v-for="story in news"
+      v-for="story in sports"
       :style="{ backgroundImage: `url(${story.urlToImage})` }"
     >
-    <div class="content">
-        <h6>{{ story.description }}</h6>
+      <div class="content">
         <a class="read-more" :href="story.url" target="_blank">Read more</a>
-    </div>
-    <div class="description">
-        <h6>{{story.title}}</h6>
-    </div>
+        <h6>{{ story.description }}</h6>
+      </div>
+      <div class="description">
+        <h6>{{ story.title }}</h6>
+      </div>
     </div>
   </div>
 </template>
@@ -19,15 +19,15 @@
 import store from "@/store";
 import { mapActions, mapGetters } from "vuex";
 export default {
-  name: "allNews",
+  name: "sports",
   computed: {
-    ...mapGetters(["news"]),
+    ...mapGetters(["sports"]),
   },
   methods: {
-    ...mapActions(["fetchNews"]),
+    ...mapActions(["fetchSports"]),
   },
   created() {
-    this.fetchNews();
+    this.fetchSports();
   },
 };
 </script>

@@ -4,7 +4,8 @@ const URL = 'http://localhost:3000/'
 export default createStore({
   state: {
     news: null,
-    headlines: null
+    headlines: null,
+    sports: null
   },
   getters: {
     news(state) {
@@ -12,6 +13,9 @@ export default createStore({
     },
     headlines(state) {
       return state.headlines;
+    },
+    sports(state) {
+      return state.sports;
     }
   },
   mutations: {
@@ -20,6 +24,9 @@ export default createStore({
     },
     setHeadlines(state, headlines) {
       state.headlines = headlines;
+    },
+    setSports(state, sports) {
+      state.sports = sports;
     }
   },
   actions: {
@@ -56,6 +63,20 @@ export default createStore({
 
         context.commit(
           "setNews",
+          results.articles.length !== 0 ? results.articles : null
+        );
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async fetchSports(context) {
+      try {
+        let res = await fetch(`${URL}sports`);
+        let results = await res.json();
+        console.log(results.articles);
+
+        context.commit(
+          "setSports",
           results.articles.length !== 0 ? results.articles : null
         );
       } catch (e) {
