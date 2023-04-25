@@ -16,10 +16,7 @@ export default {
     //   return date.toString().split(" ")[4]
     },
     created() {
-    setInterval(this.getCurrentDate, 500);   
-    },
-    computed: {
-        
+    setInterval(this.getCurrentDate(), 1000);   
     }
   },
 };

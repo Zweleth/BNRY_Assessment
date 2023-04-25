@@ -6,7 +6,7 @@ export default createStore({
     news: null,
     headlines: null,
     sports: null,
-    showSearchbar: false
+    visible: false
   },
   getters: {
     news(state) {
@@ -18,8 +18,8 @@ export default createStore({
     sports(state) {
       return state.sports;
     },
-    showSearchbar(state) {
-      return state.showSearchbar;
+    visible(state) {
+      return state.visible;
     }
   },
   mutations: {
@@ -32,8 +32,8 @@ export default createStore({
     setSports(state, sports) {
       state.sports = sports;
     },
-    setShowSearchbar(state, showSearchbar) {
-      state.showSearchbar = showSearchbar;
+    setVisible(state, visible) {
+      state.visible = visible;
     }
   },
   actions: {
@@ -91,10 +91,10 @@ export default createStore({
       }
     },
     toggleShow() {
-      this.commit(setShowSearchbar, true)
+      this.commit('setVisible', true)
     },
     toggleHide() {
-      this.commit(setShowSearchbar, false)
+      this.commit('setVisible', false)
     }
     
     

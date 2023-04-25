@@ -23,7 +23,7 @@
         </div>
         
       </div>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" v-if="visible == true">
           <input
             class="form-control me-2"
             type="search"
@@ -45,9 +45,12 @@
 </template>
 <script>
 import store from "@/store";
-
+import { mapGetters } from "vuex";
 export default {
   name: "navbar",
+  computed: {
+    ...mapGetters(["visible"]),
+  },
   methods: {
     search(searchValue) {
       store.dispatch('search', searchValue)

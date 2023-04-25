@@ -6,6 +6,7 @@
       :style="{ backgroundImage: `url(${story.urlToImage})` }"
     >
       <div class="content">
+        <h5>{{ story.source.name}}</h5>
         <h6>{{ story.description }}</h6>
         <a class="read-more" :href="story.url" target="_blank">Read more</a>
       </div>
@@ -21,13 +22,14 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "allNews",
   computed: {
-    ...mapGetters(["news"]),
+    ...mapGetters(["news","visible"]),
   },
   methods: {
-    ...mapActions(["fetchNews"]),
+    ...mapActions(["fetchNews","toggleShow"]),
   },
   created() {
     this.fetchNews();
+    this.toggleShow();
   },
 };
 </script>
@@ -89,6 +91,13 @@ export default {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  color: var(--bgColor);
+}
+
+.content h5 {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
   color: var(--bgColor);
 }
 

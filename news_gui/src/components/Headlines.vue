@@ -55,13 +55,14 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "headlines",
   computed: {
-    ...mapGetters(["headlines"]),
+    ...mapGetters(["headlines","visible"]),
   },
   methods: {
-    ...mapActions(["fetchHeadlines"]),
+    ...mapActions(["fetchHeadlines","toggleHide"]),
   },
   created() {
     this.fetchHeadlines();
+    this.toggleHide();
     
   },
 };
@@ -215,6 +216,11 @@ export default {
   width: 6rem;
   height: 2rem;
   border-radius: 0.4rem;
+}
+
+.read a{
+  color: var(--bgColor);
+  text-decoration: none;
 }
 
 @keyframes showDesc {
