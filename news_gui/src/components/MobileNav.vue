@@ -47,7 +47,7 @@ export default {
   color: var(--highlight);
 }
 
-@media (min-width: 300px) and (max-width: 520px) {
+@media (min-width: 300px) and (max-width: 720px) {
   .mobile-nav {
     display: flex;
   }  
