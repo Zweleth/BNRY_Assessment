@@ -2,6 +2,7 @@
   <div class="home">
     
     <headlines/>
+    <datetime/>
     <div class="bottom"></div>
   </div>
 </template>
@@ -10,13 +11,15 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import headlines from '@/components/Headlines.vue'
+import datetime from '@/components/DateTime.vue'
 
 
 export default {
   name: 'HomeView',
   components: {
     HelloWorld,
-    headlines
+    headlines,
+    datetime
   }
 }
 </script>

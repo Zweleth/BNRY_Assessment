@@ -1,12 +1,15 @@
 <template>
   <navbar/>
   <router-view/>
+  <mobilenav/>
 </template>
 <script>
 import navbar from '@/components/Navbar.vue'
+import mobilenav from '@/components/MobileNav.vue'
 export default {
   components: {
-    navbar
+    navbar,
+    mobilenav
   }
 }
 </script>
@@ -19,6 +22,8 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+
 
 
 </style>

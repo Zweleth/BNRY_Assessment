@@ -9,7 +9,7 @@
       <div class="content-banner"></div>
       <div class="middle-banner"></div>
       <div class="bottom-corner"></div>
-      <div class="carousel-item active">
+      <div class="carousel-item active first">
         <div>
           <h3>News</h3>
           <h3>Head<span>lines</span></h3>
@@ -48,6 +48,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
@@ -77,10 +78,13 @@ export default {
 .active {
   width: 100%;
   height: 100%;
-  background-color: var(--bgColor);
-  
+  background-color: var(--bgColor); 
 }
 
+.first h3 {
+  font-weight: bold;
+  font-size: 4rem;
+}
 .active div span {
   color: var(--highlight)
 }
@@ -89,8 +93,8 @@ export default {
   width: fit-content;
   height: fit-content;
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 30%;
+  left: 30%;
   text-align: center;
 }
 

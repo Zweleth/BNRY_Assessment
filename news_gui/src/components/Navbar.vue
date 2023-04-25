@@ -21,7 +21,9 @@
           <router-link to="/news">News</router-link>
           <router-link to="/sport">Sport</router-link>
         </div>
-        <form class="d-flex" role="search">
+        
+      </div>
+      <form class="d-flex" role="search">
           <input
             class="form-control me-2"
             type="search"
@@ -37,12 +39,13 @@
             Search
           </button>
         </form>
-      </div>
     </div>
   </nav>
+  
 </template>
 <script>
 import store from "@/store";
+
 export default {
   name: "navbar",
   methods: {
@@ -50,6 +53,8 @@ export default {
       store.dispatch('search', searchValue)
       
     },
+    
+
   },
 };
 </script>
@@ -58,7 +63,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: +1;
+  z-index: +5;
 }
 nav a {
   font-weight: bold;
@@ -78,5 +83,11 @@ nav a.router-link-exact-active {
 form {
   margin-left: auto;
   margin-right: 5rem;
+}
+
+@media (min-width: 300px) and (max-width: 720px) {
+  .collapse, .navbar-brand, .navbar-nav, .navbar-toggler {
+    display: none;
+  }  
 }
 </style>

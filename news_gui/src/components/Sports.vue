@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="allNews">
+  <div class="allNews ">
     <div
       class="point"
       v-for="story in sports"
@@ -105,6 +105,41 @@ export default {
   }
   100% {
     bottom: -15rem;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 520px) {
+  .allNews {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .point {
+    height: 13rem;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 841px) {
+  .allNews {
+   grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .point {
+    height: 13rem;
+  }
+}
+
+@media (min-width: 841px) and (max-width: 1280px) {
+  .allNews {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  * {
+    color:black;
+  }
+  .point {
+    height: 13rem;
   }
 }
 </style>

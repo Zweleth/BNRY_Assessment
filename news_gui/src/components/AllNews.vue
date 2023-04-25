@@ -1,17 +1,17 @@
 <template lang="">
-  <div class="allNews">
+  <div class="allNews d-" >
     <div
       class="point"
       v-for="story in news"
       :style="{ backgroundImage: `url(${story.urlToImage})` }"
     >
-    <div class="content">
+      <div class="content">
         <h6>{{ story.description }}</h6>
         <a class="read-more" :href="story.url" target="_blank">Read more</a>
-    </div>
-    <div class="description">
-        <h6>{{story.title}}</h6>
-    </div>
+      </div>
+      <div class="description">
+        <h6>{{ story.title }}</h6>
+      </div>
     </div>
   </div>
 </template>
@@ -81,14 +81,15 @@ export default {
   animation: popUp 0.6s ease-in-out forwards;
 }
 
-.description h6, .content h6 {
+.description h6,
+.content h6 {
   color: var(--bgColor);
 }
 .read-more {
-    position: absolute;
-    bottom: 1rem;
-    right:1rem;
-    color: var(--bgColor);
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: var(--bgColor);
 }
 
 @keyframes popUp {
@@ -105,6 +106,41 @@ export default {
   }
   100% {
     bottom: -15rem;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 520px) {
+  .allNews {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .point {
+    height: 13rem;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 841px) {
+  .allNews {
+   grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .point {
+    height: 13rem;
+  }
+}
+
+@media (min-width: 841px) and (max-width: 1280px) {
+  .allNews {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  * {
+    color:black;
+  }
+  .point {
+    height: 13rem;
   }
 }
 </style>

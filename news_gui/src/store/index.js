@@ -90,8 +90,11 @@ export default createStore({
         console.log(e);
       }
     },
-    toggleShow(value) {
-      this.commit(setShowSearchbar, value)
+    toggleShow() {
+      this.commit(setShowSearchbar, true)
+    },
+    toggleHide() {
+      this.commit(setShowSearchbar, false)
     }
     
     
