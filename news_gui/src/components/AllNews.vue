@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="allNews d-" >
+  <div class="allNews" v-if="news" >
     <div
       class="point"
       v-for="story in news"
@@ -14,6 +14,9 @@
         <h6>{{ story.title }}</h6>
       </div>
     </div>
+  </div>
+  <div class="loading" v-else>
+    <div class="spinner"></div>
   </div>
 </template>
 <script>
@@ -34,6 +37,43 @@ export default {
 };
 </script>
 <style scoped>
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.spinner {
+ width: 56px;
+ height: 56px;
+ display: grid;
+ border: 4px solid #0000;
+ border-radius: 50%;
+ border-right-color: gray;
+ animation: spinner-a4dj62 1s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+ content: "";
+ grid-area: 1/1;
+ margin: 2px;
+ border: inherit;
+ border-radius: 50%;
+ animation: spinner-a4dj62 2s infinite;
+}
+
+.spinner::after {
+ margin: 8px;
+ animation-duration: 3s;
+}
+
+@keyframes spinner-a4dj62 {
+ 100% {
+  transform: rotate(1turn);
+ }
+}
 .allNews {
   width: 100vw;
   height: 100vh;
