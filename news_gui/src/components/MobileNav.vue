@@ -26,6 +26,7 @@ export default {
 .mobile-nav a {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .mobile-nav i {
@@ -41,6 +42,9 @@ export default {
     width: 100%;
     display: grid;
     place-items: center;
+}
+.mobile-nav a.router-link-exact-active {
+  color: var(--highlight);
 }
 
 @media (min-width: 300px) and (max-width: 520px) {
