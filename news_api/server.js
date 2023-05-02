@@ -82,8 +82,8 @@ app.get(`/search/:value`, (req, res) => {
     q: `${req.params.value}`,
     sources: "bbc.co.uk, the-verge",
     domains: 'bbc.co.uk',
-    from: '2023-03-25',
-    to: '2023-04-21',
+    from: '2023-04-10',
+    to: '2023-05-02',
     language: 'en',
     sortBy: 'date',
     page: 1
