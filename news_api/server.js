@@ -8,8 +8,8 @@ news.v2.everything({
     q: 'everything',
     sources: "bbc.co.uk, the-verge",
     domains: 'bbc.co.uk',
-    from: '2023-04-10',
-    to: '2023-05-02',
+    from: '2023-04-20',
+    to: '2023-05-12',
     language: 'en',
     sortBy: 'date',
     page: 1
@@ -24,8 +24,8 @@ news.v2.everything({
     q: 'sport',
     sources: "bbc.co.uk, the-verge",
     domains: 'bbc.co.uk',
-    from: '2023-04-10',
-    to: '2023-05-02',
+    from: '2023-04-20',
+    to: '2023-05-12',
     language: 'en',
     sortBy: 'date',
     page: 1
@@ -43,8 +43,8 @@ news.v2.everything({
     q: 'headlines',
     sources: "bbc.co.uk, the-verge",
     domains: 'bbc.co.uk',
-    from: '2023-04-10',
-    to: '2023-05-02',
+    from: '2023-04-20',
+    to: '2023-05-12',
     language: 'en',
     sortBy: 'date',
     page: 1
@@ -82,8 +82,8 @@ app.get(`/search/:value`, (req, res) => {
     q: `${req.params.value}`,
     sources: "bbc.co.uk, the-verge",
     domains: 'bbc.co.uk',
-    from: '2023-04-10',
-    to: '2023-05-02',
+    from: '2023-04-20',
+    to: '2023-05-12',
     language: 'en',
     sortBy: 'date',
     page: 1
